@@ -1,20 +1,31 @@
-import typescript from '@rollup/plugin-typescript';
+import commonjs from "@rollup/plugin-commonjs";
+import resolve from "@rollup/plugin-node-resolve";
+import typescript from "@rollup/plugin-typescript";
+import packageJson from './package.json' with { type: 'json' }
 
 export default [
   {
-    input: './index.ts',
+    preserveModules: true,
+    input: "src/index.ts",
     output: [
       {
-        file: 'dist/cjs/index.js',
-        format: 'cjs',
-        sourcemap: true
+        file: packageJson.main,
+        format: "cjs",
+        sourcemap: true,
       },
       {
-        file: 'dist/ejs/index.js',
-        format: 'es',
-        sourcemap: true
-      }
+        file: packageJson.module,
+        format: "esm",
+        sourcemap: true,
+      },
     ],
-    plugins: [typescript()]
-  }
-]
+    plugins: [
+      resolve(),
+      commonjs(),
+      typescript({
+        tsconfig: "./tsconfig.json",
+        exclude: ["**/*.test.tsx", "**/*.test.ts", "**/*.stories.ts"],
+      }),
+    ],
+  },
+];

@@ -1,21 +1,31 @@
 {
-  "name": "@gnui-kit",
+  "name": "gnui-kit",
   "version": "0.1.0",
   "description": "GNUI kit for UI components",
   "main": "dist/cjs/index.js",
-  "module": "dist/es/index.js",
-  
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
   "scripts": {
     "dev": "rollup -c --watch",
     "build": "rollup -c"
   },
-
   "keywords": [],
   "author": "",
   "license": "MIT",
   "packageManager": "pnpm@10.7.0",
   "devDependencies": {
+    "@babel/core": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-react": "^7.27.1",
+    "@babel/preset-typescript": "^7.27.1",
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-typescript": "^12.1.2",
-    "rollup": "^4.40.2"
+    "@types/react": "^19.1.4",
+    "rollup": "^4.40.2",
+    "rollup-plugin-dts": "^6.2.1"
   }
 }
