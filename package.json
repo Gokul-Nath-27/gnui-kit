@@ -1,0 +1,21 @@
+{
+  "name": "@gnui-kit",
+  "version": "0.1.0",
+  "description": "GNUI kit for UI components",
+  "main": "dist/cjs/index.js",
+  "module": "dist/es/index.js",
+  
+  "scripts": {
+    "dev": "rollup -c --watch",
+    "build": "rollup -c"
+  },
+
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "packageManager": "pnpm@10.7.0",
+  "devDependencies": {
+    "@rollup/plugin-typescript": "^12.1.2",
+    "rollup": "^4.40.2"
+  }
+}
