@@ -2,10 +2,9 @@ import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";
 import packageJson from './package.json' with { type: 'json' }
-
+import dts from 'rollup-plugin-dts'
 export default [
   {
-    preserveModules: true,
     input: "src/index.ts",
     output: [
       {
@@ -28,4 +27,12 @@ export default [
       }),
     ],
   },
+  {
+    input: 'src/index.ts',
+    output: {
+      file: packageJson.types,
+      format: 'es'
+    },
+    plugins:[dts()]
+  }
 ];
