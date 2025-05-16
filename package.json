@@ -9,6 +9,7 @@
     "dist"
   ],
   "scripts": {
+    "prepare": "panda codegen",
     "dev": "rollup -c -w",
     "build": "rollup -c"
   },
@@ -21,10 +22,14 @@
     "@babel/preset-env": "^7.27.2",
     "@babel/preset-react": "^7.27.1",
     "@babel/preset-typescript": "^7.27.1",
+    "@pandacss/dev": "^0.53.6",
+    "@rollup/plugin-alias": "^5.1.1",
+    "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^28.0.3",
     "@rollup/plugin-node-resolve": "^16.0.1",
     "@rollup/plugin-typescript": "^12.1.2",
     "@types/react": "^19.1.4",
+    "postcss": "^8.5.3",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "rollup": "^4.40.2",
