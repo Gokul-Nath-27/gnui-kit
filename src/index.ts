@@ -1,1 +1,1 @@
-export default './react-components';
+export * from './react-components';

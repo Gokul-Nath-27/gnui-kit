@@ -5,6 +5,7 @@ import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import dts from "rollup-plugin-dts";
 import pkg from "./package.json" with { type: "json" };
 import babel from '@rollup/plugin-babel';
+import path from 'path';
 
 export default [
   {
@@ -21,7 +22,7 @@ export default [
         sourcemap: true,
       },
     ],
-    external: ["react", "react-dom"],
+    external: ["react", "react-dom", "@your-org/styled-system"], // Mark styled-system as external
     plugins: [
       peerDepsExternal(),
       resolve(),
@@ -32,7 +33,7 @@ export default [
         exclude: 'node_modules/**',
         presets: ['@babel/preset-env', '@babel/preset-react'],
         plugins: ['@babel/plugin-transform-runtime']
-      }),
+      })
     ],
   },
   {
