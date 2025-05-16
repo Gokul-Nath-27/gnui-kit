@@ -11,7 +11,7 @@
   "scripts": {
     "prepare": "panda codegen",
     "dev": "rollup -c -w",
-    "build": "rollup -c"
+    "build": "rollup -c && panda ship --outfile dist/panda.buildinfo.json"
   },
   "keywords": [],
   "author": "",

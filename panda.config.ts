@@ -1,7 +1,10 @@
 import { defineConfig } from '@pandacss/dev'
 
 export default defineConfig({
-  include: ['./src/**/*.{ts,tsx}'],
+  include: [
+    './node_modules/gnui-kit/dist/panda.buildinfo.json',
+    './src/**/*.{ts,tsx}'
+  ],
   outdir: 'styled-system',
   importMap: './styled-system',
   presets: ['@pandacss/preset-panda'],
