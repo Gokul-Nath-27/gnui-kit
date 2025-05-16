@@ -3,6 +3,7 @@ import resolve from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";
 import packageJson from './package.json' with { type: 'json' }
 import dts from 'rollup-plugin-dts'
+
 export default [
   {
     input: "src/index.ts",
@@ -26,6 +27,7 @@ export default [
         exclude: ["**/*.test.tsx", "**/*.test.ts", "**/*.stories.ts"],
       }),
     ],
+    external: [...Object.keys(packageJson.peerDependencies)],
   },
   {
     input: 'src/index.ts',
