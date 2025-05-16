@@ -5,13 +5,6 @@ import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import dts from "rollup-plugin-dts";
 import pkg from "./package.json" with { type: "json" };
 import babel from '@rollup/plugin-babel';
-import alias from '@rollup/plugin-alias';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const projectRootDir = path.resolve(__dirname);
 
 export default [
   {
@@ -34,14 +27,6 @@ export default [
       resolve(),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
-      alias({
-        entries: [
-          {
-            find: '@styled-system',
-            replacement: path.resolve(projectRootDir, 'styled-system'),
-          }
-        ]
-      }),
       babel({
         babelHelpers: 'runtime',
         exclude: 'node_modules/**',
